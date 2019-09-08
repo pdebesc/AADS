@@ -1,0 +1,44 @@
+\section*{Exercise 26.1-4}
+\subsubsection*{Prove that the flows in a network form a convex set.}
+Let $f_1,f_2,\alpha$ be as given in the exercise description.
+
+We want to prove that $f_{\alpha}\equiv\alpha f_1 + (1- \alpha)f_2 \forall \alpha \in (0,1)$ is a flow.
+
+We start by showing the capacity constraint i.e. 
+\begin{align}
+\forall u,v \in V \text{ it holds that } 0\leq f_{\alpha}(u,v)\leq c(u,v)\label{Ex.26.1.4:ScalarCapacityConstraint}.
+\end{align}
+
+Since $f_1$ and $f_2$ are flows, the capacity constraint holds for both of them. Since the capacity function $c$ is a property of the network, and not the individual flows, the capacity constraint for $f_1$ and $f_2$ are identical to \eqref{Ex.26.1.4:ScalarCapacityConstraint} i.e they are bounded by the same upper and lower bounds.
+
+Hence $\forall \alpha \in (0,1)$ and $\forall u,v \in V$ the following equations hold
+\begin{align*}
+f_{\alpha}(u,v) &= \alpha f_1(u,v) + (1- \alpha)f_2(u,v)\\
+                &\geq \alpha 0 + (1- \alpha)0 \\
+								&\geq 0
+\end{align*}
+and
+\begin{align*}
+f_{\alpha}(u,v) &= \alpha f_1(u,v) + (1- \alpha)f_2(u,v)\\
+                &\leq \alpha c(u,v) + (1- \alpha)c(u,v) \\
+								&= c(u,v)
+\end{align*}
+Combining the two inequalities above yields that \eqref{Ex.26.1.4:ScalarCapacityConstraint} holds.
+
+We then want to show that the flow conservation property holds. i.e
+\begin{align}
+\forall u \in V\setminus\{s,t\} \text{ it holds that } \sum_{v\in V}f_{\alpha}(v,u) = \sum_{v\in V}f_{\alpha}(u,v)\label{Ex.26.1.4:FlowConservationConstraint}.
+\end{align}
+First note that since $f_1$ and $f_2$ are flows, the flow conservation property holds for both of them individually.
+
+Pick a vertex $u$ such that $u\in V\setminus\{s,t\}$ then 
+\begin{align*}
+  \sum_{v\in V}f_{\alpha}(v,u) &= \sum_{v\in V} \left(\alpha f_1(v,u) + (1- \alpha)f_2(v,u) \right)\\
+    &= \alpha \sum_{v\in V} f_1(v,u) + (1- \alpha) \sum_{v\in V} f_2(v,u)\\
+    &= \alpha \sum_{v\in V} f_1(u,v) + (1- \alpha) \sum_{v\in V} f_2(u,v)\\
+    &= \sum_{v\in V} \left(\alpha f_1(u,v) + (1- \alpha)f_2(u,v) \right)\\
+    &= \sum_{v\in V}f_{\alpha}(u,v)
+\end{align*}
+Since this holds for all $u\in V\setminus\{s,t\}$, we have now shown \eqref{Ex.26.1.4:FlowConservationConstraint}.
+
+We have now shown the capacity constraint and the flow conservation porperty for $f_{\alpha}$, hence $f_{\alpha}$ is a flow. So the flows in a network form a convex set.

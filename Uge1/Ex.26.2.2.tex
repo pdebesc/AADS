@@ -1,0 +1,11 @@
+\section*{Exercise 26.2-2}
+\subsubsection*{What is the flow and cut}
+Let the cut be given as in the exercise, then the flow across the cut (and all other cuts) in figure~26.1(b) is 
+\begin{align*}
+f(S,T) &= f(\{s, v_2, v_4\},\{v_1, v_3,t\}) = \sum_{u \in S}\sum_{v \in T} f(u,v) - \sum_{u \in S}\sum_{v \in T} f(v,u) \\
+       &= 11 + 1 + 7 + 4 - 4 = 19
+\end{align*}
+The capacity is
+$$
+C(S,T) = \sum_{u \in S}\sum_{v \in T} c(u,v) = 16 + 4 + 7 + 4 =31
+$$

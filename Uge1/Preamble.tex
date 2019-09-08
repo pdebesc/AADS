@@ -1,0 +1,82 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[a4paper,extrafontsizes,12pt,final,article]{memoir} % DOKUMENTKLASSE. Mulighederne er bl.a. article, report, book, memoir     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%          PAKKER DER INDLÆSES         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}                      % Lidt kodning så der ikke kommer problemer ved visse konverteringer                      %
+\usepackage[english]{babel}                          % Dansk sprogpakke                                                                        %
+\usepackage{amssymb,amsmath,bm,mathtools}           % Matematiske tegn og skrifttyper, bl.a. \mathbb{}                                        %
+\usepackage{enumitem}
+\usepackage{calc}                                   % giver \setlength, og andre muligheder                                                   %
+\usepackage{hyperref}                               % Styre referencer                                                                        %
+\usepackage[amsmath,thmmarks,amsthm]{ntheorem}		% Sætningskonstruktioner																											%
+\usepackage{memhfixc}                               % fix til memoir, så hyperref virker                                                      %
+\usepackage{placeins}                               % Giver \FloatBarrier                                                                     %
+\usepackage{flafter}                                % Styre at float ikke kommer for tideligt (i sectionen før)                               %
+\usepackage{fancyvrb}																% Verbatim pakke
+\usepackage[version=3]{mhchem}
+\usepackage[obeyDraft]{todonotes}														% giver \todo{}
+\usepackage{microtype}
+\usepackage{nth}																	% brug \nth{tal} giver tal'nth
+\usepackage{xfrac}																% Giver \sfrac
+\mathtoolsset{showonlyrefs}													%	 Vis kun equation der er har en \eqref henvisning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%             Tekstblok            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlxvchars[\normalfont]                           % Beregner bredden 65 tegn i nuværende font                                               %
+\settypeblocksize{*}{1.15\lxvchars}{1.61803}        % Specifikation af tekstblok                                                              %
+\setlrmargins{*}{*}{1}                              % Højre- venste margin                                                                    %
+\setulmargins{*}{*}{1}                              % Op- ned margin                                                                          %
+\checkandfixthelayout[nearest]                      % Kontrolere layoutet                                                                     %
+%\linespread{1.3}
+\nonzeroparskip																			% gives new line with paragraph change
+\setlength{\parindent}{0pt}													% removes paragraphs indent
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%             Pagestyle            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Egne makroer    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert} % Numerisk værdi
+\DeclareMathOperator*{\argmin}{\arg\,\min}
+\DeclareMathOperator*{\argmax}{\arg\,\max}
+\newcommand{\N}{\mathbb N} %the natural numbers
+\newcommand{\Z}{\mathbb Z} %the integers
+\newcommand{\Q}{\mathbb Q} %the rational numbers
+\newcommand{\R}{\mathbb R} %the real numbers
+\newcommand{\C}{\mathbb C} %the complex numbers
+\newcommand{\Pow}{\mathbb P} %the Power set
+\newcommand{\E}{\textrm{E}} %the expected value
+\newcommand{\V}{\textrm{V}} %the variance 
+\newcommand{\T}{\mathsf{T}} %the transpose sign
+% Modulo, command \imod
+\makeatletter                                       % Laver modolus
+\def\imod#1{\allowbreak\mkern10mu({\operator@font mod}\,\,#1)}
+\makeatother
+%
+\newcommand*\uafh{{\perp\mskip-11mu\perp}} % Uafhængighedssymbol
+\renewcommand{\epsilon}{\varepsilon} %so that \epsilon makes a proper epsilon
+\renewcommand{\phi}{\varphi} %so that \phi makes a proper phi
+%\renewcommand\danishhyphenmins{22}
+\addto\captionsdanish{\renewcommand{\contentsname}{Indholdsfortegnelse}} % Ændre indholdsfortegneslen i den danske sprogpakke i babel.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Sætningskonstruktioner     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\counterwithout{section}{chapter}
+
+%\counterwithout{subsection}{chapter}
+%\counterwithout{subsection}{section}
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
+%\setcounter{tocdepth}{2} % Dybde af indholdsfortegnelsen, 1 resulterer i at kun sections kommer med, 2 er section og subsec. etc.             %
+%\setcounter{secnumdepth}{5}
+
+%%%%%%%%%%%%%%%%%%%%%% DRAFT OPTIONS %%%%%%%%%
+%\linespread{1.1} % double linespread
+%\OnehalfSpacing
+%\DoubleSpacing
+
+
+
