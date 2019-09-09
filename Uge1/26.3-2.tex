@@ -5,18 +5,30 @@ Proof of Theorem 26.10.
 The proof is by induction. 
 
 \emph{The base case, the first iteration}
-First, the Ford-Fulkerson method initializes the flow to 0. Before the first iteration all values are 
 
+First, the Ford-Fulkerson method initializes the flow to 0 on all edges. Hence at iteration 0, no iteration have run, all flow values are 0 and the outgoing flow is 0. Hence the induction base case is valid.
 
-Then, in every iteration, the flow is augmented with the residual capacity, $c_f(p)$, of the augmenting path. Since $c_f(p)$ is set from 
-the integer residual capacity of the edges, $|f|$ will always sum up to an integer.
-\\
-\\
-Consider iteration $0$ (no augmenting path):
-\\
-$|f|$ is initiated to $0$, which is an integer.
-\\
-Consider iteration $n+1$:
-\\
-If $|f|$ was an integer after the $n$th iteration, then in the $n+1$th iteration, we will augmenth 
-$|f|$ with an integer, which in turn results in an integer.
+Now assume that for iteration $n$ the theorems statement is true, we now want to show that for iteration $n+1$ the statement is also true.
+
+At the beginning of iteration $n+1$ two things can happen.
+
+1) There is no path from $s$ to $t$ in $G_f$.
+
+If there is no path, then the Ford-Fulkerson method finishes with the values found from iteration $n$. Those values are true by the induction step assumptions.
+
+2) There is a path from $s$ to $t$ in $G_f$.
+
+In this case the algorithm determines $c_f(p)$ which is an integer, since that value is chosen from the integer residual capacities that is the outcome of the  $n$'th iteration. All existing flow on path $p$ are updated with the $c_f(p)$. The existing flow is integer because of the induction assumption and adding or subtracting the integer $c_f(p)$ will yield an integer. Since the flow $f$ is only updated with the integer capacity $c_f(p)$, the new $\abs{f}$ that yields from the iteration will also only be updated with that integer value. Thus $\abs{f}$ is also integer after iteration $n+1$.
+
+%Then, in every iteration, the flow is augmented with the residual capacity, $c_f(p)$, of the augmenting path. Since $c_f(p)$ is set from 
+%the integer residual capacity of the edges, $|f|$ will always sum up to an integer.
+%\\
+%\\
+%Consider iteration $0$ (no augmenting path):
+%\\
+%$|f|$ is initiated to $0$, which is an integer.
+%\\
+%Consider iteration $n+1$:
+%\\
+%If $|f|$ was an integer after the $n$th iteration, then in the $n+1$th iteration, we will augmenth 
+%$|f|$ with an integer, which in turn results in an integer.

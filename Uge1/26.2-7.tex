@@ -28,8 +28,8 @@ We know from the definition of the value of a flow, that
 |f| = \sum_{v\in V}f(s,v) - \sum_{v\in V}f(v,s)
 \end{align}
 
-On a path from $s$ to $t$, the number of edges with a positive flow leaving $s$ will be exactly one more than the number of edges with a positive flow that are entering $s$. If this was not the case, then $p$ would not be a path from $s$ to $t$. Hence as all flow on $p$ is the same, the net flow out of $s$ corresponds to what a single edge in the flow can carry in the the path $p$ which is $c_f(p)$. So
+On a path from $s$ to $t$, the number of edges with a positive flow leaving $s$ will be exactly one more than the number of edges with a positive flow that are entering $s$. If this was not the case, then $p$ would not be a path from $s$ to $t$. Hence as all flow on $p$ is the same, the net flow out of $s$ corresponds to what a single edge in the flow can carry in the path $p$ which is $c_f(p)$. So
 \begin{align}
 |f| = \sum_{v\in V}f(s,v) - \sum_{v\in V}f(v,s) = c_f(p)
 \end{align}
-To show that $c_f(p)>0$, we note that if $c_f(p)$ is the minimum residual capacity on $p$, and since only edges with a positive residual capacity are include in the residual network, the value must be positive.
+To show that $c_f(p)>0$, we note that $c_f(p)$ is the minimum residual capacity on $p$, and since only edges with a positive residual capacity are included in the residual network, the value must be positive.
