@@ -1,22 +1,22 @@
 \section*{Exercise 26.1-1}
 \subsubsection*{Show that a maximum flow in $G'$ has the same value as a maximum flow in $G$}
-Let $G$, $G'$, $x$, $u$ and $v$ be given as in the the problem description.
+Let $G$, $G'$, $x$, $u$ and $v$ be given as in the problem description.
 
 What we want to argue here is that any flow in $G$ is also feasible in $G'$ and with the same flow value. 
 Then we conclude that $\abs{f_G^*} = \abs{f_{G'}^*}$ where $\abs{f_{G}^*}$ is the maximum flow value in the network $G$.
 
-First observe that any flow $f(u,v)$ in $G$ can be replaced with with a equivalent flow in $G'$ where $f(u,v) = f(u,x) = f(x,v)$ since $c(u,v) = c(u,x) = c(x,v)$.
+First observe that any flow $f(u,v)$ in $G$ can be replaced with a equivalent flow in $G'$ where $f(u,v) = f(u,x) = f(x,v)$ since $c(u,v) = c(u,x) = c(x,v)$.
 
-Let $p_{f_G^*}$ be the path the the maximum flow $f^*$ takes in $G$.
+Let $p_{f_G^*}$ be the path the maximum flow $f^*$ takes in $G$.
 
-\begin{description}[align=parleft]
-\item If $(u,v) \not\in p_{f_G^*}$
-\end{description}
-In this case the the same path is available in $G'$ which would yield the same flow value. If introducing the new vertex $x$ means that $p_{f_{G'}^*}$ is change such that $\{(u,x),(x,v)\}\subset p_{f_{G'}^*}$, then by our first observation above, the same flow value is possible in $G$, and since $(u,v) \not\in p_{f_G^*}$ deviating cannot yield a higher flow value.
+\textit{If $(u,v) \not\in p_{f_G^*}$}
 
-\begin{description}[align=parleft]
-\item If $(u,v) \in p_{f_G^*}$
-\end{description}
-In this case we have already observed that replacing the $f(u,v)$ with $f(u,x) = f(x,v)$ will yield the same flow value. Hence the maximum flow value will be the same. If $f(u,x) \neq f(u,v)$ in $G'$, then the same value value would be possible in $G$, and the flow value obtained by deviating cannot be larger than $\abs{f^*_G}$ as that goes against the assumption that $\abs{f^*_G}$ is the maximum flow value.
+In this case the same path is available in $G'$ which would yield the same flow value. If introducing the new vertex $x$ means that $p_{f_{G'}^*}$ is changed such that $\{(u,x),(x,v)\}\subset p_{f_{G'}^*}$, then by our first observation above, the same flow value is possible in $G$, and since $(u,v) \not\in p_{f_G^*}$ deviating cannot yield a higher flow value.
+
+\textit{If $(u,v) \in p_{f_G^*}$}
+
+In this case we have already observed that replacing the $f(u,v)$ with $f(u,x) = f(x,v)$ will yield the same flow value. Hence the maximum flow value will be the same.
+
+If introducing the new vertex $x$ in $G'$ changes the flow value from $u$ to $v$, then this cannot yield a higher maximum flow value in $G'$. This is because of our observation above, as all flow from $u$ to $v$ are bounded by the same capacity constraint in both $G$ and $G'$, the same flow value is feasible in both networks. As $f^*_G$ is part of a maximum flow value, deviating from that cannot yield a higher flow value, as that goes against it being a maximum flow value in the beginning.
 
 Hence we conclude that in all possible cases the maximum flow value will be the same, hence $\abs{f_G^*} = \abs{f_{G'}^*}$.
