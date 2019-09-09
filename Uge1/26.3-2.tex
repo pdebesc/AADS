@@ -1,0 +1,16 @@
+\section{Exercise 26.3-2}
+Proof of Theorem 26.10.
+\\
+\\
+First, the Ford-Fulkerson method initializes the flow to 0. Then, in every iteration, the flow is augmented with the residual capacity, $c_f(p)$, of the augmenting path. Since $c_f(p)$ is set from 
+the integer residual capacity of the edges, $|f|$ will always sum up to an integer.
+\\
+\\
+Consider iteration $0$ (no augmenting path):
+\\
+$|f|$ is initiated to $0$, which is an integer.
+\\
+Consider iteration $n+1$:
+\\
+If $|f|$ was an integer after the $n$th iteration, then in the $n+1$th iteration, we will augmenth 
+$|f|$ with an integer, which in turn results in an integer.

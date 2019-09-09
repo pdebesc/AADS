@@ -1,0 +1,30 @@
+\section{Exercise 26.2-9}
+We are given to flows, $f$ and $f'$ and compute the augmented flow $f\uparrow f'$.
+
+\textbf{Does the augmented flow satisfy the flow conservation property?}
+\\
+Yes!
+\\
+\\
+For any vertice $u\in V - \left\{s,t\right\}$, one of the following cases apply:
+\\
+\textit{Neither $f$ nor $f'$ includes $u$.}
+\\
+There is no flow, so $f(u,v)=f(v,u)$, where $v\in V$.
+\\
+\\
+\textit{$f$ and/or $f'$ includes $u$.}
+\\
+It is given, that $f$ and $f'$ are ordinary flows, so the flow conservation property must hold for each of these; all flow into a vertice will also flow out. Regardless of whether $u$ is included in one or two flows, all flow into $u$ will also come out.
+\\
+\\
+\textbf{Does the augmented flow satisfy the capacity constraint?}
+\\
+No!
+\\
+\\
+Consider the following case:
+\\
+The edge $(u,v)$ has capacity $c(u,v)=2$. The edge $(u,v)$ is part of both flows $f$ and $f'$, where $f(u,v)=2$ and $f'(u,v)=2$.
+\\
+Hence, $f(u,v)+f'(u,v)=2+2=4>c(u,v)$.

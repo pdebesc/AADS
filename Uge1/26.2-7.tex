@@ -1,0 +1,33 @@
+\section{Exercise 26.2-7}
+Proof of Lemma 26.2.
+\\
+\\
+We first prove, that $f_p$ is a flow in $G_f$, by proving the capacity constraint and flow conservation property holds in $G_f$.
+\\
+\\
+Capacity constraint:
+\\
+It is given, that $f_p(u,v)=c_f(p)$, if $(u,v)$ is on the path $p$. We also know that the residual capacity $c_f(p)$ is the minimum capacity of any edge on $p$, which gives us the upper bound on the flow through all edges on the path
+\\
+$f_p(u,v)\leq c_f(u,v)$
+\\
+Furthermore, it is also given, that $f_p(u,v)=0$, if $(u,v)$ is not on $p$, which gives the lower bound on the flow
+\\
+$0 \leq f_p(u,v)$.
+\\
+\\
+Flow conservation property:
+\\
+As noted earlier, the flow on $p$ will be determined by the residual capacity $c_f(p)$ of $p$, meaning the same flow will be pushed through all edges on $p$. Hence, the flow conservation property holds.
+\\
+\\
+Proof that $|f_p| = c_f(p)>0$:
+\\
+We know from the definition of the value of a flow, that 
+\begin{align}
+|f| = \sum_{v\in V}f(s,v) - \sum_{v\in V}f(v,s)
+\end{align}
+The source $s$ must have at least one more outgoing edge than ingoing. Due to the flow conservation property, flow on ingoing and outgoing edges must even out, so we only need to concern ourselves with the "extra" outgoing edge. In this case, there is no ingoing flow for $s$, so
+\begin{align}
+|f_p| = \sum_{v\in V}f_p(s,v) - \sum_{v\in V}f_p(v,s) = c_f(p) - 0 = c_f(p)
+\end{align}
