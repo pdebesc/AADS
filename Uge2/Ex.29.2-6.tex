@@ -3,7 +3,9 @@
 
 Let $G, V, E$ and $G', V', E'$ be given as in the section--26.3.
 
-From Corollary~26.11 we know that finding a max flow in $G'$ also tells us what the maximum matching in $G$ is. So we want to define a max flow problem, we follow the approach as they do in in the book, as section 29.2 \emph{Maximum flow}.
+From Corollary~26.11 we know that finding a max flow in $G'$ also tells us what the maximum matching in $G$ is. So we want to define a max flow problem.
+\\
+We follow the approach as they do in the book, as section 29.2 \emph{Maximum flow}.
 
 Define the capacity of the edges as
 $$
@@ -20,7 +22,7 @@ The the problem can be stated as
 &\max      \quad  &\sum_{v\in V'}f_{sv}  &- \sum_{v\in V'}f_{vs}   &\\
 &\text{s.t.}      & f_{uv}               &\leq c(u,v)              &\text{for all } u,v \in V'\\
 &                 & \sum_{v\in V'}f_{uv} &= \sum_{v\in V'}f_{vu}   &\text{for all } u \in V\\
-&                 & f_{uv}               &\leq 0                   &\text{for all } u,v \in V'
+&                 & f_{uv}               &\geq 0                   &\text{for all } u,v \in V'
 \end{align*}
 
 This maximization problem will solve the max flow problem, which by Corollary~26.11 solves the maximum--bipartite--matching problem.

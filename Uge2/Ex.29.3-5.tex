@@ -20,7 +20,9 @@ We introduce the slack variables and rewrite the problem such that the new slack
 &x_5   &&= 16  &&         &&    -x_2 
 \end{alignat*}
 
-Both coefficients in the objective function are positive, hence increasing their value will increase the maximum. We let $x_1$ enter as a basis variable. To determine which variable that leaves the basis, we determine the which of the current  basis variable will become tight first when we incease $x_1$. This turns out to be $x_4$. When we let $x_1$ enter the basis instead of $x_4$ we get
+Both coefficients in the objective function are positive, hence increasing their value will increase the maximum. However, increasing them to much, will cause the current basic variables to become negative.
+\\
+First, we choose $x_1$ to enter as a basis variable. To determine which variable will leave the basis, we determine which of the current basis variables that will decrease to 0 first (making the constraint \textit{tight}), when $x_1$ is increased. This turns out to be $x_4$. When we let $x_1$ enter the basis instead of $x_4$ we get
 
 \begin{alignat*}{4}
 &z     &&=  216  && + 12.5 x_2 &&   -18x_4    \\
@@ -29,7 +31,7 @@ Both coefficients in the objective function are positive, hence increasing their
 &x_5   &&= 16    &&       -x_2 &&    
 \end{alignat*}
 
-The objective function can potentially still be increased by inserting $x_2$ into the basis. In this case $x_3$ will leave the basis, as that is the first basis variable the becomes thigh when $x_2$ are increased. The new problem maximization problem is then given by
+The objective function can potentially still be increased by inserting $x_2$ into the basis. In this case $x_3$ will leave the basis, by repeating the same procedure as above. The new problem maximization problem is then given by
 
 \begin{alignat*}{4}
 &z     &&=  316  && - 12.5 x_3 &&   -5.5x_4    \\

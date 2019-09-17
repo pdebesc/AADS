@@ -9,16 +9,16 @@ We wish to find the number, $x$, of runs of the minimum cut algorithm, such that
 
 We can express, that the probability of finding a minimum cut, after $x$ repetitions of the algorithm, is at least 99\%, by
 $$
-\frac{2}{n(n-1)}^x \geq 99
+\left(\frac{2}{n(n-1)}\right)^x \geq 0.99
 $$
 
 So we just need to isolate $x$.
 $$
 \begin{aligned}
-\left(\frac{2}{n(n-1)}\right)^x & \geq 99
+\left(\frac{2}{n(n-1)}\right) ^x & \geq 0.99
 \\
-x\ln\left(\frac{2}{n(n-1)}\right) & \geq \ln(99)
+x\ln\left(\frac{2}{n(n-1)}\right) & \geq \ln(0.99)
 \\
-x & \geq \frac{\ln(99)}{\ln\left(\frac{2}{n(n-1)}\right)}
+x & \geq \frac{\ln(0.99)}{\ln\left(\frac{2}{n(n-1)}\right)}
 \end{aligned}
 $$
