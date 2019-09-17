@@ -1,9 +1,9 @@
-\section{Ex.1.2}
+\section*{Ex.1.2}
 \subsubsection*{Contract two nodes at random. Show min--cut is found with exponential small probability.}
 
 Define a graph $G$ with $n$ nodes. Let the nodes $u_1,\ldots,u_{u/2}$ be part of the set $S_1$ and let the nodes $u_{u/2+1},\ldots,u_n$ be part of the set $S_2$. Let all nodes in $S_j, j=1,2$ have internal edges between them, and let there be an edge from $(u_1,u_n)$. Hence the min--cut would be $(u_1,u_n)$. It is easy to see that if the algorithm at any point contracts a node from $S_1$ and $S_2$ the min--cut is not found. Hence, we want to find the probability that at all steps, two nodes from either $S_{1i}$ or $S_{2i}$ is contracted, where $S_{ji}, j=1,2$ is the set of remaining nodes at $S_j$ after $i$ iterations.
 
-Define $X_{ji} = \{ 2 \text{ nodes are picked from } S_{ji} \}, j=1,2$. Note that 
+Define $X_{ji} = \{ 2 \text{ nodes are picked from } S_{ji} \}, j=1,2$. and note that $X_{1i}\cap X_{2i}= \emptyset$. Furthermore, note that 
 $$
 P(X_{ji}) = \frac{\binom{\abs{S_{ji}}}{2}}{\binom{\abs{S_{1i}} + \abs{S_{2i}}}{2}}
 $$ 
@@ -17,9 +17,9 @@ P(E_i) &= P(X_{1i} \cup X_{2i}) = P(X_{1i}) + P(X_{2i}) - P(X_{1i} \cap X_{2i}) 
 &=  \frac{\binom{\abs{S_{1i}}}{2}}{\binom{\abs{S_{1i}} + \abs{S_{2i}}}{2}} + \frac{\binom{\abs{S_{2i}}}{2}}{\binom{\abs{S_{1i}} + \abs{S_{2i}}}{2}}\\
 &= \frac{\binom{\abs{S_{1i}}}{2} + \binom{\abs{S_{2i}}}{2}}{\binom{\abs{S_{1i}} + \abs{S_{2i}}}{2}}
 \end{align*}
-where the last equation is strictly less than one as long as there are still elements in both of $S_{ji}$, which cannot happen as long as only nodes from the same set $S_{ji}$ is merged.
+where the last equation is strictly less than one as long as there are still elements in both of $S_{ji}$, which there for sure will be if no nodes from $S_{1i}$ and $S_{2i}$ have been contracted in the same iteration $i$.
 
-Set $p^* = \max_{i} P(E_i)$ and note that because of the obervation above $p^*<1$.
+Set $p^* = \max_{i} P(E_i)$ and note that because of the observation above $p^*<1$.
 
 Hence
 \begin{align*}
