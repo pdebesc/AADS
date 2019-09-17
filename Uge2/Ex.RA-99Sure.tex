@@ -1,0 +1,24 @@
+\subsection*{How many runs of randomized contraction do we need to be 99\% sure that a minimum cut is found?}
+
+In RA section 1.1, the probability of finding a minimum cut is found to be larger than
+$$
+\frac{2}{n(n-1)}
+$$
+
+We wish to find the number, $x$, of runs of the minimum cut algorithm, such that we are 99\% sure that a minimum cut is found.
+
+We can express, that the probability of finding a minimum cut, after $x$ repetitions of the algorithm, is at least 99\%, by
+$$
+\frac{2}{n(n-1)}^x \geq 99
+$$
+
+So we just need to isolate $x$.
+$$
+\begin{aligned}
+\left(\frac{2}{n(n-1)}\right)^x & \geq 99
+\\
+x\ln\left(\frac{2}{n(n-1)}\right) & \geq \ln(99)
+\\
+x & \geq \frac{\ln(99)}{\ln\left(\frac{2}{n(n-1)}\right)}
+\end{aligned}
+$$

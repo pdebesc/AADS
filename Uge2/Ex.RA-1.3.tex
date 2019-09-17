@@ -1,0 +1,31 @@
+\subsection*{RA Ex. 1.3}
+We consider a Monte Carlo algorithm $A$ for a problem $\Pi$ whose expected running time is at most $T(n)$ on any instance of size $n$ and that produces a correct solution with probability $\gamma(n)$. Furthermore, given a solution to $\Pi$, we can verify its correctness in time $t(n)$.
+
+We wish to obtain a Las Vegas algorithm that always gives a correct answer to $\Pi$ and runs in expected time at most
+$$
+\frac{T(n) + t(n)}{\gamma(n)}
+$$
+This can be obtained, by repeating the Monte Carlo algorithm $A$, until a correct solution to $\Pi$ is produced.
+
+We know, that the expected running time is at most $T(n)$ on any instance of size $n$, so the expected running time would also be $T(n)$ for each repetition in the new algorithm.
+\\
+Furthermore, for each repetition, we also need to verify that the solution is correct, which adds $t(n)$ to the running time of each repetition.
+
+Since the running time for each repetition is $T(n) + t(n)$, we just need to determine, how many repetitions are needed to produce a correct solution to $\Pi$. We call this number $X$.
+\\
+To determine $X$, we first consider the following observations:
+\\
+- In each repetition, the solution produced is either correct, which we consider a success, or incorrect, which we consider a failure.
+\\
+- Each repetition is independent.
+\\
+- Each repetition has the same probability $\gamma(n)$ for producing a success (meaning a correct solution to $\Pi$).
+\\
+Hence, we can model the number of failures, before the one success, as a geometric distribution. Then we know from App. C.4 (C.32), that
+$$
+E\left[X\right] = \frac{1}{\gamma(n)}
+$$
+Since we have now determined $X$, we can show that the new Las Vegas algoritm runs in expected time at most
+$$
+\left(T(n) + t(n)\right) \cdot X = \frac{T(n) + t(n)}{\gamma(n)}
+$$

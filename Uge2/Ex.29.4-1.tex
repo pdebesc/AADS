@@ -1,0 +1,48 @@
+\subsection*{Ex.29.4-1}
+
+We have the following linear program
+$$
+\begin{aligned}
+ & \max & 18x_1 && + && 12.5x_2 & 
+\\
+ & \ \text{s.t.} & x_1 && + && x_2 & \leq 20
+\\
+ & & x_1 && && & \leq 12
+\\
+ & & && && x_2 & \leq 16
+\\
+ & & && && x_1,x_2 & \geq 0
+\end{aligned}
+$$
+To form the dual, we need to 
+\\
+- change the maximization to a minimization,
+\\
+- switch the coefficients of the objective function and the coefficients on the right-hand sides of the inequalities, and
+\\
+- replace every $\leq$ with $\geq$.
+
+The original linear program (in standard form) can be rewritten in a compact form as
+$$
+\begin{aligned}
+ & \max & c^Tx & 
+\\
+ & \ \text{s.t.} & Ax & \leq b
+\\
+ & & x & \geq 0,
+\end{aligned}
+$$
+where $c=\begin{pmatrix}18 \\12.5 \end{pmatrix}$, $A=\begin{pmatrix}1 & 1 & 0 \\1 & 0 & 1 \end{pmatrix}$, $b=\begin{pmatrix}20 \\12 \\16 \end{pmatrix}$, and $x=\begin{pmatrix}x_1 \\x_2 \end{pmatrix}$.
+
+These vectors and matrix are exactly what we need for the dual:
+$$
+\begin{aligned}
+ & \min & 20y_1 && + && 12y_2 && + && 16y_3 & 
+\\
+ & \ \text{s.t.} & y_1 && + && y_2 && && & \geq 18
+\\
+ & & y_1 && && && + && y_3 & \geq 12.5
+\\
+ & & && && && && y_1,y_2,y_3 & \geq 0
+\end{aligned}
+$$

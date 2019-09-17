@@ -1,14 +1,50 @@
 \subsection*{Ex.29.1-5}
 
 We have the following linear program
-\begin{alignat}{2}
- & \text{Max} & 2x_1 & & - 6x_3 & 
+$$
+\begin{aligned}
+ & \max & 2x_1 && && && - && 6x_3 & 
 \\
- & \ \text{s.t.} & x_1 & + x_2 & - x_3 & \leq 7
+ & \ \text{s.t.} & x_1 && + && x_2 && - && x_3 & \leq 7
 \\
- & & 3x_1 & - x_2 & & \geq 8
+ & & 3x_1 && - && x_2 && && & \geq 8
 \\
- & & - x_1 & + 2x_2 & + 2x_3 & \geq 0
+ & & -x_1 && + && 2x_2 && + && 2x_3 & \geq 0
 \\
- & & & & x_1,x_2,x_3 & \geq 0
-\end{alignat}
+ & & && && && && x_1,x_2,x_3 & \geq 0
+\end{aligned}
+$$
+We first put this on standard form, by reversing two of the inequalities:
+$$
+\begin{aligned}
+ & \max & 2x_1 && && && - && 6x_3 & 
+\\
+ & \ \text{s.t.} & x_1 && + && x_2 && - && x_3 & \leq 7
+\\
+ & & -3x_1 && + && x_2 && && & \leq -8
+\\
+ & & x_1 && - && 2x_2 && - && 2x_3 & \leq 0
+\\
+ & & && && && && x_1,x_2,x_3 & \geq 0
+\end{aligned}
+$$
+We can now convert the linear program into slack form, by introducing the slack variables $x_4$, $x_5$ and $x_6$, which measures the slack between the left-hand and right-hand sides of each of the inequalities, besides the nonnegativity constraints.
+\\
+The slack form will then have equality constraints, besides the nonnegativity constraints, as follows:
+$$
+\begin{aligned}
+ & \max & && && && 2x_1 && && && - && 6x_3
+\\
+ & \ \text{s.t.} & x_4 = && 7 && - && x_1 && - && x_2 && + && x_3 &
+\\
+ & & x_5 = && -8 && + && 3x_1 && - && x_2 && &&
+\\
+ & & x_6 = &&  && - && x_1 && + && 2x_2 && + && 2x_3
+\\
+ & & && && x_1,x_2,x_3,x_4,x_5,x_6 \geq 0 \span\span\span\span\span\span\span\span\span\span\span\span
+\end{aligned}
+$$
+And the basic and nonbasic variables are:
+\\
+Basic: $x_4,x_5,x_6$
+Nonbasic: $x_1,x_2,x_3$
