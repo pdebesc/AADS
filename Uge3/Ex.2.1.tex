@@ -1,0 +1,16 @@
+\section*{Ex.2.1}
+\subsection*{Is the truly independent hash function universial}
+
+Yes - the truly independent hash function universial. 
+To prove it we want to show that $P(h(x) = h(y))\leq 1/m$. 
+
+The truely random hash function $h$ is an independent and identical discrete uniformly distributed random variable. 
+Hence $h(x)\sim U(0,m-1)$ which means $P(h(x) = j) = 1/m$ for all $j\in[m]$. So for two distinct keys $x,y \in U$
+\begin{align*}
+P(h(x) = h(y)) &= \sum_{j=0}^{m-1} P([h(x)=j] \cap [h(y)=j])&\\
+               &= \sum_{j=0}^{m-1}   P(h(x)=j) P(h(y)=j)    &\text{equality holds as $h$ is independent}\\
+							 &= m P^2(h(x)=j)                             &\text{equality holds as $h$ is identical distributed}\\
+							 &= m \left(\frac{1}{m}\right)^2              &\text{equality holds as $h$ is uniform distributed}\\
+							 &= \frac{1}{m}                               &
+\end{align*}
+Which shows that the truly independent hash function universial.
