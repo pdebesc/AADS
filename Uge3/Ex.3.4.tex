@@ -1,0 +1,18 @@
+\section*{Ex.3.4}
+\subsection*{Is multiply--Shift strongly universal}
+
+We want to show that it is not by showing it does not hold for $c=1$. We do this by showing that the distinct keys does not hash independently.
+
+So assume that it is strongly universal, then by definition  for any distinct keys $x,y$ and any non-distinct hash values $q,r$ the probability $P((h_b(x) = q) \cap (h_b(y) = r)) = \frac{1}{m^2}>0$. As strongly universality holds for any key, we pick $x=0, q=1$ and $y\neq 0$. Furthermore; it is easy to see that $h_b(0)=0$ for all values of $b$. As we assumed $h$ is strongly universal, then the keys hash independently and
+$$
+P((h_b(0) = 1) \cap (h_b(y) = r)) = P(h_b(0) = 1) P(h_b(y) = r) = 0 P(h_b(y) = r) = 0.
+$$
+
+Hence by assuming string universality we have now shown
+$$
+0< \frac{1}{m^2} = P((h_b(0) = 1) \cap (h_b(y) = r)) = 0 P(h_b(y) = r) = 0.
+$$
+
+which is a contradiction.
+
+As our only assumption is that $h$ is strongly universal. That assumption must be false. Hence we have proven that $h$ is \emph{not} strongly universal.

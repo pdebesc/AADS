@@ -1,0 +1,11 @@
+\section*{Ex.3.2}
+\subsection*{what is the upper bound}
+
+As $h$ is strongly $c$-universal they keys hash independently, hence
+
+\begin{align*}
+P(h(x)=q \land h(y)=r) &= P(h(x)=q \cap h(y)=r) = P(h(x)=q) P(h(y)=r) \\
+                       &\leq \frac{c}{m} \frac{c}{m} = \left(\frac{c}{m}\right)^2
+\end{align*}
+
+So the upper bound is $c^2/m^2$
