@@ -9,3 +9,10 @@ E\left[ \abs*{L[(h(x))]} \right]
        &\leq 1 + \frac{n-1}{m} < 2
 \end{align*}
 The first equality is the same as in the notes. For the next equality we used the assumption that $x\in S$, which will give a collision with probability 1. Hence that element is extracted. The last equality comes from the fact that $h$ is universal hence each collision probability is less than $1/m$ and there are $n-1$ elements in the sum.
+
+\emph{What is the bound if $h$ is 2 universal?}
+\\
+The calculations would be the same, the only thing that will change is where the inequality sign is. For 2 universal the probability is $P(h(x)=h(y))\leq \frac{2}{m}$. There are $n-1$ of those probabilities in the sum, hence the result would be
+$$
+E\left[ \abs*{L[(h(x))]} \right]  \leq 1 + \frac{2(n-1)}{m}
+$$
