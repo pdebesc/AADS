@@ -1,0 +1,43 @@
+\section*{Ex.2.6}
+\subsection*{Multiply-mod-prime hash function where $a=0$ is possible}
+
+\emph{Show it is not universal.}
+
+To be a universal hash function it must be that for all distinct keys $P(h(x)=h(y))\leq 1/m$.
+
+We will give a concrete example where the above probability is not fulfill. Set $p=3$, $m=2$, $x=0$, $y=1$. Then the possible values for $a,b\in\{0,1,2\}$. The table below shows the hash value for $x$ and $y$ with the value set above.
+
+\begin{center}
+\begin{tabular}{l|cc|r}
+              & $h(x)$ & $h(y)$ & collision\\
+\hline
+ $(a,b)=(0,0)$& 0 & 0 & true\\
+ $(a,b)=(0,1)$& 1 & 1 & true\\
+ $(a,b)=(0,2)$& 0 & 0 & true\\
+ $(a,b)=(1,0)$& 0 & 1 & false\\
+ $(a,b)=(1,1)$& 1 & 0 & false\\
+ $(a,b)=(1,2)$& 0 & 0 & true\\
+ $(a,b)=(2,0)$& 0 & 0 & true\\
+ $(a,b)=(2,1)$& 1 & 0 & false\\
+ $(a,b)=(2,2)$& 0 & 1 & false
+\end{tabular}	
+\end{center}
+
+It can be seen that for 5 out of the 9 possibilities, there is a collsion. Hence the probaility for collision is
+$$
+P(h(0)=h(1)) = \frac{5}{9} > \frac{1}{2} = \frac{1}{m}
+$$
+So we have found an instance there this hash function is not universal.
+
+\emph{Prove that it is always 2-universal}
+
+First note that for $a=0$ $P(h_{0,b}(x)=h_{0,b}(y)) = 1$ for all values of $b, x, y$. The probability $P(a=0)=1/p$. To prove 2-universal we see that
+\begin{align*}
+P(h_{a,b}(x) = h_{a,b}(y)) &= P([(a=0)\cap(h_{a,b}(x) = h_{a,b}(y))]\cup [(a>0)\cap(h_{a,b}(x) = h_{a,b}(y))])\\
+&= P((a=0)\cap(h_{0,b}(x) = h_{0,b}(y))) + P((a>0)\cap(h_{a,b}(x) = h_{a,b}(y)))\\
+&= \frac{1}{p} + P((a>0)\cap(h_{a,b}(x) = h_{a,b}(y))) \\
+&< \frac{1}{p} + \frac{1}{m} \\
+&< \frac{1}{m} + \frac{1}{m} \\
+&= \frac{2}{m}
+\end{align*}
+Hence we have shown that the hash function is 2-universal.

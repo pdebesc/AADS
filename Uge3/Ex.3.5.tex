@@ -1,0 +1,18 @@
+\section*{Ex.3.5}
+\subsection*{estimate the size of the symmetric difference}
+The symmetric difference $(B\backslash C)\cup (C \backslash B)$
+
+We have that 
+$$
+(B\backslash C)\cup (C \backslash B) = (B \cup C)\backslash (C \cap B)
+$$
+Hence
+\begin{align*}
+S_{h,t}((B\backslash C)\cup (C \backslash B)) 
+  &= S_{h,t}((B \cup C)\backslash (C \cap B))\\
+  &= ((S_{h,t}(B) \cup S_{h,t}(C))\backslash (S_{h,t}(C) \cap S_{h,t}(B)))
+\end{align*}
+Hence the estimate would be
+$$
+[(S_{h,t}(B) \cup S_{h,t}(C)) - (S_{h,t}(C) \cap S_{h,t}(B))]\frac{t}{m}
+$$
