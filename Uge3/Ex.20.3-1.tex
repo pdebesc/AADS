@@ -1,0 +1,8 @@
+\section*{Exercise 20.3-1}
+\subsection*{Modify vEB trees to support duplicate keys}
+
+Instead of the tree holding bits, it could instead hold integers. These integers would then act as counters for the number of instances of each key.
+\\
+Furthermore, to support this change, the element stored in $min$ should appear in the clusters (like $max$), and hold an integer like the rest of the tree.
+\\
+When inserting and deleting in the tree, the counter should then be updated, by adding to or subtracting from the counter.

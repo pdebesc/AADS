@@ -1,0 +1,10 @@
+\section*{Exercise 20.3-6}
+\subsection*{The smallest number of operations $n$ for which the amortized time of each operation in a vEB tree is $O(\lg\lg u)$}
+
+The amortized time of each operation are calculated, by taking the sum of the time for each operation, and dividing this by the number of all operations.
+\\
+Now, creating the entire universe takes $\Theta (u)$ time, which must account for all operations, so we can express the amortized time of each operation by
+$$
+\lg\lg u = \frac{u}{n}
+$$
+giving us $n = \frac{u}{\lg\lg u}$. Hence, we need at least $\frac{u}{\lg\lg u}$ operations.

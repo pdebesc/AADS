@@ -1,0 +1,32 @@
+\section*{Exercise 20.3-4}
+\subsection*{What happens if you call vEB-TREE-INSERT with an element, that is already in the vEB tree?}
+
+The procedure will terminate without inserting anything:
+\\
+Line 1-2 is not possible, since there is at least one element in the tree. We know this, since $x$ is a duplicate of an element in the tree.
+\\
+Line 3-4 is not possible either, since $x$ is a duplicate of an element in the tree, so the lowest possible value for $x$ is $x=V.min$
+\\
+Line 6-8 is not possible either, so eventually we will hit line 9, where the recursive call brings us to a smaller cluster. This will keep happening until we hit a base-case vEB tree, meaning we no longer fulfill line 5, and moves on to line 10-11.
+\\
+Since line 10-11 is not possible either (again, $x$ is a duplicate of an element in the tree, so the highest possible value for $x$ is $x=V.max$), so the procedure terminates without doing anything.
+
+\subsection*{What happens if you call vEB-TREE-DELETE with an element, that is not in the vEB tree?}
+
+A wrong value will be deleted:
+\\
+Line 1-3 simply checks if the tree has only one element, and if so, deletes it, regardless of the value of $x$.
+\\
+Line 4-8 checks if we are in a base-case vEB tree, and if so, updates $V.min$ and $V.max$, based on the value of $x$, which is assumed to be either 0 or 1 (the only two possible values in the base-case vEB tree). Since $x$ is non of these values, this update will end up deleting $V.max$ and leaving $V.min$ unchanged.
+\\
+Line 9-12 is not possible, since we know, that $x$ is not in the tree, and so we will hit line 12, where the recursive call brings us to a smaller cluster. This will keep happening until we hit a base-case vEB tree, which brings us to line 4-8, which ends up deleting $V.max.$
+\\
+Line 14-22 is not possible to reach.
+
+\subsection*{Explain why the procedures exhibit the behavior that they do}
+
+Recursive calls will always bring us down to a smaller tree, until we hit a base case.
+
+\subsection*{Show how to modify vEB trees and their operations so that we can check in constant time whether an element is present}
+
+We introduce an extra array, which has $u$ elements, that are bits. For each element in the tree, the value of the corresponding entry in the array represents, whether the element is present (1) or not (0).

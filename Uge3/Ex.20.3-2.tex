@@ -1,0 +1,8 @@
+\section*{Exercise 20.3-2}
+\subsection*{Modify vEB trees to support keys that have associated satellite data}
+
+For both of the keys in the vEB(2) trees (meaning leaves), which are not summaries, we define an additional field, holding the associated satellite data.
+\\
+Furthermore, we also define this new field for every $min$ in the (entire) tree, that is not a summary, since the elements stored in $min$ does not appear in the clusters.
+\\
+This way, the new field holds the associated satellite data for every key in the entire tree, but it will not affect running time, since the satellite data are found together with the keys.

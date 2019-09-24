@@ -23,6 +23,8 @@
 \mathtoolsset{showonlyrefs}													%	 Vis kun equation der er har en \eqref henvisning
 \usepackage{float} %Man kan bruge H til at sætte en table eller figure netop hvor den er i koden
 \usepackage{subfig} %Man kan sætte billeder ved siden af hinanden med \subfloat[overskrift]{indsæt billede}
+\usepackage{algorithm} %Til at skrive pseudokode for algoritmer
+\usepackage[noend]{algpseudocode} %wrap your algorithmic code in an algorithm environment to produce a floating environment with numbered algorithms
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%             Tekstblok            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,6 +59,7 @@
 % Modulo, command \imod
 \makeatletter                                       % Laver modolus
 \def\imod#1{\allowbreak\mkern10mu({\operator@font mod}\,\,#1)}
+\def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 %
 \newcommand*\uafh{{\perp\mskip-11mu\perp}} % Uafhængighedssymbol

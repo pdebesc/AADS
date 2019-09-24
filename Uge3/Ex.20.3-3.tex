@@ -1,0 +1,24 @@
+\section*{Exercise 20.3-3}
+\subsection*{Write pseudocode for a procedure that creates an empty van Emde Boas tree}
+
+\begin{algorithm}
+\caption*{vEB-TREE-EMPTY($V,U$)}\label{euclid}
+\begin{algorithmic}[1]
+\State $V.min$ = NIL
+\State $V.max$ = NIL
+\State $V.u = U$
+\If {$u \neq 2$}
+\State $V.summary =$ vEB-TREE-EMPTY$(V, \sqrt[\uparrow]{u})$
+\EndIf
+\State $V.cluster = Array(\sqrt[\uparrow]{u})$
+\For{$i$ in $V.cluster$}
+\State $V.cluster[i] = $vEB-TREE-EMPTY$(V, \sqrt[\downarrow]{u})$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Lines 1-2 sets $min$ and $max$ to NIL in the current tree $V$. In line 3, the universe size $u$ of the tree is set from the input $U$.
+\\
+Line 4 and 5 creates a new summary of size $\sqrt[\uparrow]{u}$, by making a recursive call, unless $u$ equals the base size 2.
+\\
+Line 6-8 creates clusters, by creating arrays with the positions $0,...,\sqrt[\uparrow]{u}$, and in each of these positions a recursive call is made with the universe size $\sqrt[\downarrow]{u}$.

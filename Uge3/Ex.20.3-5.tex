@@ -1,0 +1,22 @@
+\section*{Exercise 20.3-5}
+\subsection*{Running times for the modified operations}
+
+The recursive procedures that implement the vEB tree operations have running times characterized by the recurrence
+$$
+T(u) \leq T(u^{1/k}) + T(u^{1-1/k}) + O(1),
+$$
+where the first part is due to the number of clusters, and the second part is due to the size of the clusters, which are enumerated.
+\\
+By letting $m=\lg u$, such that $u=2^m$, then
+$$
+T(2^m) \leq T(2^{m/k}) + T(u^{m-m/k}) + O(1)
+$$
+We then rename $S(m)=T(2^m)$, which results in
+$$
+S(m) \leq S(m/k) + S(m-m/k) + O(1) = S(m/k) + S\left(\frac{m(k-1)}{k}\right) + O(1)
+$$
+For $k>2$, the second part will dominate, so in terms of running time, we can "ignore" the first term. In this case, case 2 of the master theorem applies, and $S(m)$ has the solution $S(m)=O(\lg m)$.
+By changing back, we can conclude, that
+$$
+T(u) = T(2^m) = S(m) = O(\lg m) = O(\lg\lg u)
+$$
