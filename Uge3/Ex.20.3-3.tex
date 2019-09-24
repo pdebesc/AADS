@@ -1,19 +1,19 @@
 \section*{Exercise 20.3-3}
 \subsection*{Write pseudocode for a procedure that creates an empty van Emde Boas tree}
 
-\begin{algorithm}
-\caption*{vEB-TREE-EMPTY($V,U$)}\label{euclid}
+\begin{algorithm}[H]
+\caption*{vEB-TREE-EMPTY($V,U$)}
 \begin{algorithmic}[1]
 \State $V.min$ = NIL
 \State $V.max$ = NIL
 \State $V.u = U$
 \If {$u \neq 2$}
 \State $V.summary =$ vEB-TREE-EMPTY$(V, \sqrt[\uparrow]{u})$
-\EndIf
 \State $V.cluster = Array(\sqrt[\uparrow]{u})$
 \For{$i$ in $V.cluster$}
 \State $V.cluster[i] = $vEB-TREE-EMPTY$(V, \sqrt[\downarrow]{u})$
 \EndFor
+\EndIf
 \end{algorithmic}
 \end{algorithm}
 

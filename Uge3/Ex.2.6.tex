@@ -3,9 +3,11 @@
 
 \emph{Show it is not universal.}
 
-To be a universal hash function it must be that for all distinct keys $P(h(x)=h(y))\leq 1/m$.
+To be a universal hash function it must hold that for all distinct keys $P(h(x)=h(y))\leq 1/m$.
 
-We will give a concrete example where the above probability is not fulfill. Set $p=3$, $m=2$, $x=0$, $y=1$. Then the possible values for $a,b\in\{0,1,2\}$. The table below shows the hash value for $x$ and $y$ with the value set above.
+We will give a concrete example where the above probability is not fulfilled:
+\\
+Set $p=3$, $m=2$, $x=0$, $y=1$. Then the possible values for $a,b\in\{0,1,2\}$. The table below shows the hash value for $x$ and $y$ with the value set above.
 
 \begin{center}
 \begin{tabular}{l|cc|r}
@@ -23,15 +25,15 @@ We will give a concrete example where the above probability is not fulfill. Set 
 \end{tabular}	
 \end{center}
 
-It can be seen that for 5 out of the 9 possibilities, there is a collsion. Hence the probaility for collision is
+It can be seen that for 5 out of the 9 possibilities, there is a collision. Hence the probability for collision is
 $$
 P(h(0)=h(1)) = \frac{5}{9} > \frac{1}{2} = \frac{1}{m}
 $$
-So we have found an instance there this hash function is not universal.
+So we have found an instance where this hash function is not universal.
 
 \emph{Prove that it is always 2-universal}
 
-First note that for $a=0$ $P(h_{0,b}(x)=h_{0,b}(y)) = 1$ for all values of $b, x, y$. The probability $P(a=0)=1/p$. To prove 2-universal we see that
+First note that for $a=0$, then $P(h_{0,b}(x)=h_{0,b}(y)) = 1$ for all values of $b, x, y$. The probability $P(a=0)=1/p$. To prove 2-universal we see that
 \begin{align*}
 P(h_{a,b}(x) = h_{a,b}(y)) &= P([(a=0)\cap(h_{a,b}(x) = h_{a,b}(y))]\cup [(a>0)\cap(h_{a,b}(x) = h_{a,b}(y))])\\
 &= P((a=0)\cap(h_{0,b}(x) = h_{0,b}(y))) + P((a>0)\cap(h_{a,b}(x) = h_{a,b}(y)))\\

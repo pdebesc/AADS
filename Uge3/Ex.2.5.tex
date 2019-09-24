@@ -1,6 +1,6 @@
 \section*{Ex.2.5}
 \subsection*{what is the probability that there is a key $y \in S$ such that $h(y) = h(x)$ and $s(y) = s(x)$}
-The set $(h(x)=h(y))\cap(s(x)=s(y))$ is the set where the hash function and the signature function gives the same value for two distinct keys $x,y$. Hence probability we want to determine is the probability for that set over all possible $y$ values in $S$. So we look at
+The set $(h(x)=h(y))\cap(s(x)=s(y))$ is the set where the hash function and the signature function gives the same value for two distinct keys $x,y$. Hence the probability we want to determine is the probability for that set over all possible $y$ values in $S$. So we look at
 \begin{align*}
 \sum_{y\in S}P[(h(x)=h(y))\cap(s(x)=s(y))] 
              &= \sum_{y\in S}P(h(x)=h(y))P(s(x)=s(y))\\
@@ -8,4 +8,4 @@ The set $(h(x)=h(y))\cap(s(x)=s(y))$ is the set where the hash function and the 
              &\leq n\frac{1}{n}\frac{1}{n^3}\\
              &= \frac{1}{n^3}
 \end{align*}
-The first equality holds because the hash functions are independent. The next equality uses that $\abs{S}=n$. The inequality uses that the $h$ and $s$ are universal hash functions. So the probability for the hash function and for the signature function have a collision for two distinct keys are less than $1/n^3$
+The first equality holds because the hash functions are independent. The next equality uses that $\abs{S}=n$. The inequality uses that the $h$ and $s$ are universal hash functions. So the probability for the hash function and for the signature function to have a collision for two distinct keys are less than $1/n^3$
