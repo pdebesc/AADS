@@ -1,0 +1,28 @@
+\section*{Ex.34.5-6}
+\subsection*{Hamiltonian path NP complete}
+
+To show that HAM--PATH is NP complete we show
+\begin{enumerate}[]
+	\item HAM--PATH is NP
+	\item HAM--CYCLE $\leq_P$ HAM--PATH
+\end{enumerate}
+That HAM--PATH is NP, is shown in EX.34.2-6
+
+To see that HAM--CYCLE $\leq_P$ HAM--PATH,
+
+Given a graph $G$ where there is an instance of HAM--CYCLE, pick a node $u$ and create a new graph $G'$ where $u$ is replaced with two new nodes $u'$ and $u''$. All the edges that goes in to $u$ are also going into $u''$ and all of the outgoing edges from $u$ are also outgoing edges from $u'$. No edges are going from $u'$ to $u''$. 
+
+$G$ has HAM--CYCLE $\Leftrightarrow$ $G'$ has HAM--PATH
+
+Before we prove it, note that a HAM--PATH must start in $u'$ and end in $u''$
+
+We show $\Rightarrow$
+
+Assume $G$ has HAM-CYCLE, then the same nodes creates a HAM--CYCLE in $G'$ if we split $u$ into $u'$ and $u''$.
+
+We show $\Leftarrow$
+
+Assume $G'$ has HAM-PATH, then combining $u'$ and $u''$ into $u$ will create a HAM-CYCLE in $G$.
+
+
+This show item 2. Hence we have shown that HAM-PATH is NP complete.

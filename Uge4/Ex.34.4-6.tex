@@ -1,0 +1,9 @@
+\section*{Ex.34.4-6}
+\subsection*{Formula satisfiability}
+
+We are given an algorithm, call it $A$, which can decide formula satisfiability in polynomial time. To find a satisfying assignment with the use of $A$ do the following.
+
+Let $x_1,\ldots,x_k$ be the input $k$ inputs variable to the formula problem. First call $A$, to decide if the formula instance has a satisfying assignment. If not it will return 0, and no more work needs to be done. If it returns 1, there exists an assignment which we can find.
+
+Note that if we set $x_i=1$ for some $i\in\{1,\ldots,k\}$, and then run $A$ it will tell us if there exists a solution when $x_i=1$. If there doesn't, then set $x_1 =0$. Do this for all $i\in\{1,\ldots,k\}$, and you will get a satisfying assignment. For each variable we call $A$ once, which is $O(n^m)$ and we do this $k$ times plus some constant work. This yields an algorithm that finds the satisfying assignment in $O(kn^m)=O(n^m)$ time. Which is polynomial.
+

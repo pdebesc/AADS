@@ -1,0 +1,26 @@
+\section*{Ex.34.3-3}
+\subsection*{ $\bar{L}\leq_P L \Leftrightarrow L \leq_P \bar{L}$}
+
+We start by showing $\Rightarrow$. So assume $\bar{L}\leq_P L$.
+
+We want to show that for every $x\in \bar{L} \Leftrightarrow  f(x) \in L$
+
+For all $x\in \bar{L}$ it holds that
+\begin{align*}
+x\in \bar{L} & \Leftrightarrow x \not\in L 					&\text{as $L$ and $\bar{L}$ are complements}\\
+						 & \Leftrightarrow f(x) \not\in \bar{L} &\text{as $\leq_P$ implies a reducible function exists}\\
+						 & \Leftrightarrow f(x) \in L 					&\text{as $L$ and $\bar{L}$ are complements}
+\end{align*}
+Which show the first part.
+
+Now we show $\Leftarrow$. Assume $L \leq_P \bar{L}$.
+
+We want to show that for every $x\in L \Leftrightarrow  f(x) \in \bar{L}$
+
+For all $x\in \bar{L}$ it holds that
+\begin{align*}
+x\in L       & \Leftrightarrow x \not\in \bar{L} 					&\text{as $L$ and $\bar{L}$ are complements}\\
+						 & \Leftrightarrow f(x) \not\in L  &\text{as $\leq_P$ implies a reducible function exists}\\
+						 & \Leftrightarrow f(x) \in \bar{L} 					&\text{as $L$ and $\bar{L}$ are complements}
+\end{align*}
+Which show the other arrow in the bi--implication. Hence we have shown what we wanted.
