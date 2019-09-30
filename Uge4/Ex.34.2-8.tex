@@ -1,0 +1,10 @@
+\section*{Ex.34.2-8}
+\subsection*{Show that TAUTOLOGY $\in$ co-NP}
+
+The question is analog to showing that $\overline{\text{TAUTOLOGY}}\in$ NP, where $\overline{\text{TAUTOLOGY}}$ is the complement of TAUTOLOGY.
+\\
+$\overline{\text{TAUTOLOGY}}$ must be the language of boolean formulas, where changing the assignment of at least one variable will cause the formula $\phi$ to evaluate to 0.
+
+If we can verify a certificate in polynomial time, then $\overline{\text{TAUTOLOGY}}\in$ NP. A certificate would be an assignment of variables, and we can check in polynomial time, that $\overline{\text{TAUTOLOGY}}$ evaluates to 0.
+
+Also note, that SAT $\in$ NP, and since $\overline{\text{TAUTOLOGY}}$ has fewer connectives than SAT, then $\overline{\text{TAUTOLOGY}}$ must be included in SAT, making $\overline{\text{TAUTOLOGY}}\in$ NP.

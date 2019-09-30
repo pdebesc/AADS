@@ -1,3 +1,14 @@
-\section*{Ex.34.1-5}
+\section*{Ex.34.1-1}
 \subsection*{Show LPL $\in$ P $\Leftrightarrow$ LP $\in$ P}
 
+We first argue that LPL $\in$ P $\Rightarrow$ LP $\in$ P:
+\\
+Since LPL $\in$ P, a solution takes polynomial time to solve. This solution is a longest path consisting of $l$ edges.
+\\
+To solve LP, we run LPL, and check if $l\geq k$. Since the check only takes constant time, solving LP takes in total polynomial time.
+
+We then argue that LP $\in$ P $\Rightarrow$ LPL $\in$ P:
+\\
+To solve LPL, we first run LP, where $k=1$, to see if a longest path with this number of edges can be found. If successful, we increase $k$ with 1, and repeat the procedure. When the algorithm finally fails, we must have found the limit for a longest path, thus solving LPL.
+\\
+Each run of LP takes polynomial time $O(n^m)$, where $n=|V|$, and will max run $n$ times. Hence, LPL is solved in $n \cdot O(n^m)=O(n^{m+1})$.

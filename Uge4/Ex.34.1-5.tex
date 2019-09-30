@@ -1,0 +1,22 @@
+\section*{Ex.34.1-5}
+\subsection*{Show that if an algorithm makes at most a constant number of calls to polynomial-time subroutines and performs an additional amount of work that also takes polynomial times, then it runs in polynomial time}
+
+Each subroutine $i$ takes $O(n^{k_i}_i)$ time, and there are $m$ subroutines. So in total, the algorithms takes
+$$
+\sum^m_{j=1} O(n^{k_i}_i) = c\cdot O(n^{k_1}_1) + c\cdot O(n^{k_2}_2) + ... + c\cdot O(n^{k_m}_m) \leq m\cdot c_{max}\cdot O(n^{k_{max}}_{max}),
+$$
+where the index $max$ represents the subroutine, that takes the longest time.
+\\
+Since both $m$ and $c$ are constants, the total running time is still (bounded by) $O(n^k)$.
+
+\subsection*{Show that a polynomial number of calls to polynomial-time subroutines a may result in an exponential-time algorithm}
+
+We show an example:
+\\
+Let the subroutine be a recursive function, where an integer $x$ is multiplied with $x-1$, then $x-2$, then $x-3$, and so on, $x$ times, yielding:
+$$
+x\cdot (x-1)\cdot (x-2)\cdot (x-3)\cdots 1 = x!
+$$
+Note, that $x!\in e^x$, which is exponential.
+\\
+It will take an exponential number of bits to represent this, so it must also take exponential time to perform.
