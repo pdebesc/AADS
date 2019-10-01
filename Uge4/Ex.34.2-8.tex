@@ -7,4 +7,4 @@ $\overline{\text{TAUTOLOGY}}$ must be the language of boolean formulas, where ch
 
 If we can verify a certificate in polynomial time, then $\overline{\text{TAUTOLOGY}}\in$ NP. A certificate would be an assignment of variables, and we can check in polynomial time, that $\overline{\text{TAUTOLOGY}}$ evaluates to 0.
 
-Also note, that SAT $\in$ NP, and since $\overline{\text{TAUTOLOGY}}$ has fewer connectives than SAT, then $\overline{\text{TAUTOLOGY}}$ must be included in SAT, making $\overline{\text{TAUTOLOGY}}\in$ NP.
+Since $\overline{\text{TAUTOLOGY}}$ has fewer connectives than SAT, and no connectives that SAT does not, then $\overline{\text{TAUTOLOGY}}$ is a proper subset of SAT, i.e. $\overline{\text{TAUTOLOGY}} \subset \text{SAT}$. As SAT $\in$ NP, this then implies that $\overline{\text{TAUTOLOGY}} \in$ NP, which then means that TAUTOLOGY $\in$ co-NP.

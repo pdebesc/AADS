@@ -3,7 +3,7 @@
 
 Each subroutine $i$ takes $O(n^{k_i}_i)$ time, and there are $m$ subroutines. So in total, the algorithms takes
 $$
-\sum^m_{j=1} O(n^{k_i}_i) = c\cdot O(n^{k_1}_1) + c\cdot O(n^{k_2}_2) + ... + c\cdot O(n^{k_m}_m) \leq m\cdot c_{max}\cdot O(n^{k_{max}}_{max}),
+\sum^m_{i=1} O(n^{k_i}_i) = c_1n^{k_1}_1 + c_2n^{k_2}_2 + \ldots + c_m n^{k_m}_m \leq m\cdot c_{max}n^{k_{max}}_{max} = O(n^{k_{max}}_{max}),
 $$
 where the index $max$ represents the subroutine, that takes the longest time.
 \\
@@ -13,10 +13,10 @@ Since both $m$ and $c$ are constants, the total running time is still (bounded b
 
 We show an example:
 \\
-Let the subroutine be a recursive function, where an integer $x$ is multiplied with $x-1$, then $x-2$, then $x-3$, and so on, $x$ times, yielding:
+Let the subroutine be a recursive function, where an integer $x$ is multiplied with $x-1$, then $x-2$, then $x-3$, and so on, $x-1$ times which is linearly many times. The outcome of the recursive function is:
 $$
 x\cdot (x-1)\cdot (x-2)\cdot (x-3)\cdots 1 = x!
 $$
-Note, that $x!\in e^x$, which is exponential.
+Note, that $x!\in \omega(e^x)$,
 \\
 It will take an exponential number of bits to represent this, so it must also take exponential time to perform.
