@@ -3,8 +3,10 @@
 
 The decision problem: Is there a cycle of simple path of size $k$
 
-To shown NP. Get the vertices $v_1,\ldots, v_n$ in sorted order, and verify that edges $(v_i, v_{i+1})$ exists in $G$ for $i\in\{1,\ldots,n\}$ and let $v_{n+1} = v_1$. This can be done in polynomial time. Hence LSC is NP.
+To show NP:
+\\
+Get the vertices $v_1,\ldots, v_n$ in sorted order, and verify that edges $(v_i, v_{i+1})$ exists in $G$ for $i\in\{1,\ldots,n\}$ and let $v_{n+1} = v_1$. This can be done in polynomial time. Hence LSC is NP.
 
-To show NP complete we want to show that HAM--CYCLE $\leq_P$ LSC.
-
+To show NP completeness we want to show that HAM--CYCLE $\leq_P$ LSC:
+\\
 If you solve LSC with  $k=\abs*{V}$ then you get 1 if there is a HAM--CYCLE and 0 else. Hence there exists a polynomial function which transform HAM--CYCLE to LSC. So LSC is NP complete.	

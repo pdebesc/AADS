@@ -2,8 +2,12 @@
 \subsection*{Subgraph--isomorphism problem (SI)}
 
 
-To show that SI is NP complete we want to show that 1) SI is in NP and 2) CLIQUE $\leq_P$ SI.
+To show that SI is NP complete we want to show that 1) SI is in NP, and 2) CLIQUE $\leq_P$ SI.
 
-To show that SI is NP. Given the function $f$ which map vertex name in $G_1$ to vertex names in $G_2$ the isomorphism problem can be verified in linear time. Given vertices $V_1$ and edges $E_1$ in $G_1$ we can also in linear time determine if $G_1$ is a sub--graph of $G_2$. Combining the two we can in linear time determine if $G_1$ is subgraph--isomorphism to $G_2$. Hence SI is NP.
+To show that SI is NP:
+\\
+Given the function $f$ which map vertex names in $G_1$ to vertex names in $G_2$, the isomorphism problem can be verified in linear time. Given vertices $V_1$ and edges $E_1$ in $G_1$ we can also in linear time determine if $G_1$ is a sub--graph of $G_2$. Combining the two we can in linear time determine if $G_1$ is subgraph--isomorphic to $G_2$. Hence SI is NP.
 
-To see that CLIQUE $\leq_P$ SI. Note that we must map all CLIQUE problem to some $G_1$. Let $G_1$ be the complete graph with $k$ vertices, then solving SI would also solve CLIQUE, and as CLIQUE is NP complete, so is SI.
+To see that CLIQUE $\leq_P$ SI:
+\\
+Note that we must map all CLIQUE problem to some $G_1$. Let $G_1$ be the complete graph with $k$ vertices, then solving SI would also solve CLIQUE, and as CLIQUE is NP complete, so is SI.
